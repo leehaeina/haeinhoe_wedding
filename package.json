@@ -25,7 +25,7 @@
     "gh-pages": "^6.0.0",
     "typescript": "^4.9.5"
   },
-  "resolutions": {
+  "overrides": {
     "ajv": "^8.12.0",
     "ajv-keywords": "^5.1.0"
   },

@@ -14,19 +14,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '16'
-          cache: 'npm'
-      
-      - name: Clear npm cache
-        run: npm cache clean --force
+          node-version: '18'
+          cache: 'yarn'
       
       - name: Install dependencies
-        run: |
-          rm -rf node_modules package-lock.json
-          npm install --legacy-peer-deps
+        run: yarn install --frozen-lockfile
       
       - name: Build
-        run: npm run build
+        run: yarn build
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
