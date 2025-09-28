@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/haeinhoe_wedding/static/css/main.5a7ed5cb.css",
+    "main.js": "/haeinhoe_wedding/static/js/main.db47becd.js",
+    "index.html": "/haeinhoe_wedding/index.html",
+    "main.5a7ed5cb.css.map": "/haeinhoe_wedding/static/css/main.5a7ed5cb.css.map",
+    "main.db47becd.js.map": "/haeinhoe_wedding/static/js/main.db47becd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a7ed5cb.css",
+    "static/js/main.db47becd.js"
+  ]
+}
