@@ -8,7 +8,10 @@ const App: React.FC = () => {
   const isClickRef = useRef(true);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const images = ['/love-story.png', '/love-story2.png'];
+  const images = [
+    `${process.env.PUBLIC_URL}/love-story.png`,
+    `${process.env.PUBLIC_URL}/love-story2.png`
+  ];
 
   // 다음 이미지로
   const goToNext = () => {
