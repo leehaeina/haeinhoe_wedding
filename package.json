@@ -2,7 +2,7 @@
   "name": "mobile-wedding-invitation",
   "version": "1.0.0",
   "description": "모바일 청첩장 React 앱",
-  "homepage": "http://haeinhoe.kro.kr/",
+  "homepage": "https://leehaeina.github.io/haeinhoe_wedding",
   "main": "index.tsx",
   "scripts": {
     "start": "react-scripts start",
