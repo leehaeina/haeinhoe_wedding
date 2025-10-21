@@ -1,4 +1,4 @@
-/* 기본 스타일 리셋 */
+/* 전역 리셋 */
 * {
     margin: 0;
     padding: 0;
@@ -6,553 +6,115 @@
 }
 
 body {
-    font-family: 'Noto Sans KR', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #f8f9fa;
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #000;
 }
 
-.invitation-container {
-    max-width: 100%;
-    margin: 0 auto;
-    background: white;
-    min-height: 100vh;
-    position: relative;
-}
-
-/* 메인 헤더 */
-.main-header {
-    text-align: center;
-    padding: 60px 20px 40px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+/* 앱 컨테이너 - 전체 화면 */
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
     position: relative;
     overflow: hidden;
 }
 
-.main-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.3;
-}
-
-.wedding-date {
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-bottom: 30px;
-    opacity: 0.9;
-    letter-spacing: 1px;
-}
-
-.couple-names {
+/* 슬라이더 컨테이너 */
+.slider-container {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    overflow: hidden;
     position: relative;
-    z-index: 1;
-    margin-bottom: 20px;
+    cursor: grab;
+    user-select: none;
 }
 
-.groom-name, .bride-name {
-    font-size: 2.5rem;
-    font-weight: 300;
-    margin: 10px 0;
-    letter-spacing: 3px;
+.slider-container:active {
+    cursor: grabbing;
 }
 
-.ampersand {
-    font-size: 1.8rem;
-    font-weight: 300;
-    margin: 20px 0;
-    opacity: 0.8;
-}
-
-.venue-info {
-    font-size: 1rem;
-    opacity: 0.9;
-    margin-top: 20px;
-}
-
-/* 인사말 섹션 */
-.greeting {
-    padding: 60px 20px;
-    text-align: center;
-    background: white;
-}
-
-.quote {
-    font-size: 1.1rem;
-    font-style: italic;
-    color: #666;
-    margin-bottom: 40px;
-    line-height: 1.8;
-}
-
-.greeting-title {
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-.greeting-content {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.greeting-content p {
-    margin: 15px 0;
-}
-
-/* 신랑신부 소개 */
-.couple-intro {
-    padding: 60px 20px;
-    background: #f8f9fa;
-}
-
-.couple-intro h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.couple-profiles {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.profile-card {
-    text-align: center;
-    padding: 30px 20px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.profile-name {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.profile-details {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 5px 0;
-}
-
-.profile-job {
-    font-size: 0.8rem;
-    color: #999;
-    margin-top: 10px;
-}
-
-.family-info {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* 웨딩 인터뷰 */
-.interview {
-    padding: 60px 20px;
-    background: white;
-}
-
-.interview h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.interview-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.interview-item {
-    margin-bottom: 30px;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
-}
-
-.interview-question {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.interview-answer {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-}
-
-.answer-person {
-    font-weight: 500;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-/* 갤러리 */
-.gallery {
-    padding: 60px 20px;
-    background: #f8f9fa;
-}
-
-.gallery h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.timeline {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.timeline-item {
+/* 슬라이더 래퍼 */
+.slider-wrapper {
     display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: transform 0.3s ease-out;
+    will-change: transform;
 }
 
-.timeline-image {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-    border-radius: 50%;
-    margin-right: 20px;
+/* 각 슬라이드 */
+.slide {
+    min-width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: #999;
-    font-size: 0.9rem;
+    align-items: center;
+    background-color: #000;
 }
 
-.timeline-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.timeline-content p {
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* 예식 정보 */
-.wedding-info {
-    padding: 60px 20px;
-    background: white;
-}
-
-.wedding-info h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.info-grid {
-    display: grid;
-    gap: 20px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.info-item {
-    display: flex;
-    align-items: flex-start;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    border-left: 4px solid #667eea;
-}
-
-.info-item i {
-    font-size: 1.2rem;
-    color: #667eea;
-    margin-right: 15px;
-    margin-top: 2px;
-    min-width: 20px;
-}
-
-.info-content h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.info-content p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 2px 0;
-}
-
-/* 참석 여부 전달 */
-.rsvp {
-    padding: 60px 20px;
-    background: #f8f9fa;
-}
-
-.rsvp h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.rsvp-form {
-    max-width: 500px;
-    margin: 0 auto;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
+/* 이미지 스타일 */
+.love-story-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
-    color: #333;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
+/* 인디케이터 컨테이너 */
+.slider-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
 }
 
-.form-group textarea {
-    height: 100px;
-    resize: vertical;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+/* 인디케이터 점 */
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
     border: none;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: 500;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
+    padding: 0;
 }
 
-.submit-btn:hover {
-    transform: translateY(-2px);
+.indicator:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
 }
 
-/* 마음 전하실 곳 */
-.bank-info {
-    padding: 60px 20px;
-    background: white;
+.indicator.active {
+    background-color: #fff;
+    width: 24px;
+    border-radius: 4px;
 }
 
-.bank-info h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.bank-sections {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.bank-section h3 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-}
-
-.bank-item {
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.bank-item h4 {
-    font-size: 1rem;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-.bank-item p {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 2px 0;
-}
-
-.copy-btn {
-    background: #667eea;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-/* 방명록 */
-.guestbook {
-    padding: 60px 20px;
-    background: #f8f9fa;
-}
-
-.guestbook h2 {
-    text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.guestbook-form {
-    max-width: 500px;
-    margin: 0 auto 40px;
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.guestbook-entries {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.guestbook-entry {
-    background: white;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.entry-name {
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 5px;
-}
-
-.entry-message {
-    color: #666;
-    line-height: 1.6;
-}
-
-.entry-date {
-    font-size: 0.8rem;
-    color: #999;
-    margin-top: 10px;
-}
-
-/* 푸터 */
-.footer {
-    text-align: center;
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-}
-
-.footer p {
-    font-size: 1rem;
-    opacity: 0.9;
-}
-
-/* 반응형 디자인 */
-@media (max-width: 768px) {
-    .couple-profiles {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .bank-sections {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .groom-name, .bride-name {
-        font-size: 2rem;
-    }
-    
-    .main-header {
-        padding: 40px 15px 30px;
-    }
-    
-    .greeting, .couple-intro, .interview, .gallery, .wedding-info, .rsvp, .bank-info, .guestbook {
-        padding: 40px 15px;
+/* 모바일 최적화 */
+@media (max-width: 480px) {
+    .slider-container {
+        max-width: 100%;
     }
 }
 
-/* 애니메이션 */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.section-visible {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-/* 스크롤바 스타일링 */
+/* 스크롤바 숨기기 */
 ::-webkit-scrollbar {
-    width: 6px;
+    display: none;
 }
 
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #667eea;
-    border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #5a6fd8;
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
