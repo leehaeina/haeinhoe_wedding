@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/haeinhoe_wedding/static/css/main.0e521d9e.css",
-    "main.js": "/haeinhoe_wedding/static/js/main.60f64eef.js",
-    "index.html": "/haeinhoe_wedding/index.html",
-    "main.0e521d9e.css.map": "/haeinhoe_wedding/static/css/main.0e521d9e.css.map",
-    "main.60f64eef.js.map": "/haeinhoe_wedding/static/js/main.60f64eef.js.map"
+    "main.css": "/static/css/main.0e521d9e.css",
+    "main.js": "/static/js/main.6e7f4c9a.js",
+    "index.html": "/index.html",
+    "main.0e521d9e.css.map": "/static/css/main.0e521d9e.css.map",
+    "main.6e7f4c9a.js.map": "/static/js/main.6e7f4c9a.js.map"
   },
   "entrypoints": [
     "static/css/main.0e521d9e.css",
-    "static/js/main.60f64eef.js"
+    "static/js/main.6e7f4c9a.js"
   ]
 }
