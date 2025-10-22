@@ -38,4 +38,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
           publish_branch: gh-pages
-          cname: haeinhoe.kro.kr
+          cname: wedding-haeinhoe.kro.kr
