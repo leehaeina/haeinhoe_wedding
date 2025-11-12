@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 
 const App: React.FC = () => {
-  const mainImage = `${process.env.PUBLIC_URL}/card_vertical.png`;
+  const mainImage = `${process.env.PUBLIC_URL}/wedding_card.png`;
 
   return (
     <div className="app-container">
