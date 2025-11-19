@@ -3,9 +3,18 @@ import './styles.css';
 
 const App: React.FC = () => {
   const mainImage = `${process.env.PUBLIC_URL}/wedding-card-.png`;
+  const overlayPhotos = [
+    `${process.env.PUBLIC_URL}/ 001.jpeg`,
+    `${process.env.PUBLIC_URL}/ 002.jpeg`,
+    `${process.env.PUBLIC_URL}/ 003.jpeg`,
+    `${process.env.PUBLIC_URL}/ 004.jpeg`,
+    `${process.env.PUBLIC_URL}/ 005.jpeg`,
+  
+  ];
 
   const [toastMessage, setToastMessage] = useState('');
   const toastTimeoutRef = useRef<number | null>(null);
+  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   const showToast = (message: string) => {
     setToastMessage(message);
@@ -55,6 +64,110 @@ const App: React.FC = () => {
           className="love-story-image"
           draggable={false}
         />
+        <div
+          style={{
+            position: 'absolute',
+            top: 3250,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: 260,
+            borderRadius: 20,
+            boxShadow: '0 18px 40px rgba(0,0,0,0.2)',
+            border: '5px solid #fff',
+            overflow: 'hidden',
+            background: '#fff',
+          }}
+        >
+          <img
+            src={overlayPhotos[currentPhotoIndex]}
+            alt={`행복한 순간 ${currentPhotoIndex + 1}`}
+            style={{
+              width: '100%',
+              height: 370,
+              display: 'block',
+              objectFit: 'contain',
+              backgroundColor: '#fff',
+            }}
+          />
+          <button
+            type="button"
+            onClick={() =>
+              setCurrentPhotoIndex(
+                (prev) => (prev - 1 + overlayPhotos.length) % overlayPhotos.length
+              )
+            }
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: 8,
+              transform: 'translateY(-50%)',
+              background: 'rgba(0,0,0,0.4)',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '50%',
+              width: 32,
+              height: 32,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: 18,
+            }}
+            aria-label="이전 사진"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            onClick={() =>
+              setCurrentPhotoIndex((prev) => (prev + 1) % overlayPhotos.length)
+            }
+            style={{
+              position: 'absolute',
+              top: '50%',
+              right: 8,
+              transform: 'translateY(-50%)',
+              background: 'rgba(0,0,0,0.4)',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '50%',
+              width: 32,
+              height: 32,
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              fontSize: 18,
+            }}
+            aria-label="다음 사진"
+          >
+            ›
+          </button>
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 8,
+              left: '50%',
+              transform: 'translateX(-50%)',
+              display: 'flex',
+              gap: 6,
+            }}
+          >
+            {overlayPhotos.map((_, index) => (
+              <span
+                key={index}
+                style={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: '50%',
+                  background:
+                    index === currentPhotoIndex ? '#fff' : 'rgba(255,255,255,0.5)',
+                  border: '1px solid rgba(0,0,0,0.1)',
+                }}
+              />
+            ))}
+          </div>
+        </div>
         <div
         style={{
           position: 'absolute',
@@ -252,6 +365,7 @@ const App: React.FC = () => {
             cursor: 'pointer',
           }}
         ></div>
+      
       </div>
       {toastMessage && (
         <div className="toast-container">
