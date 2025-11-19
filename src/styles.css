@@ -48,7 +48,7 @@ body {
   -webkit-user-drag: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 390px) {
   .app-container {
     padding: 16px;
   }
