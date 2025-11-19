@@ -1,8 +1,50 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './styles.css';
 
 const App: React.FC = () => {
   const mainImage = `${process.env.PUBLIC_URL}/wedding-card-.png`;
+
+  const [toastMessage, setToastMessage] = useState('');
+  const toastTimeoutRef = useRef<number | null>(null);
+
+  const showToast = (message: string) => {
+    setToastMessage(message);
+    if (toastTimeoutRef.current) {
+      window.clearTimeout(toastTimeoutRef.current);
+    }
+    toastTimeoutRef.current = window.setTimeout(() => {
+      setToastMessage('');
+    }, 2500);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (toastTimeoutRef.current) {
+        window.clearTimeout(toastTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const copyBankAccount = async (bankAccount: string) => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(bankAccount);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = bankAccount;
+        textarea.style.position = 'fixed';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+      showToast('계좌번호가 복사되었어요!');
+    } catch (error) {
+      console.error(error);
+      showToast('복사에 실패했어요. 직접 확인해 주세요.');
+    }
+  };
 
   return (
     <div className="app-container">
@@ -166,8 +208,56 @@ const App: React.FC = () => {
             />
           </div>
         </div>
+        </div>
+
+        <div
+          role="button"
+          tabIndex={0}
+          aria-label="신한 110-485-841070 복사"
+          onClick={() => copyBankAccount('신한 110-485-841070')}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              copyBankAccount('신한 110-485-841070');
+            }
+          }}
+          style={{
+            position: 'absolute',
+            top: 2880,
+            left: 230,
+            width: 15,
+            height: 15,
+            cursor: 'pointer',
+          }}
+        ></div>
+
+        <div
+          role="button"
+          tabIndex={0}
+          aria-label="신한 110-485-841070 복사"
+          onClick={() => copyBankAccount('신한 110-356-035859')}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              copyBankAccount('신한 110-356-035859');
+            }
+          }}
+          style={{
+            position: 'absolute',
+            top: 2930,
+            left: 230,
+            width: 15,
+            height: 15,
+  
+            cursor: 'pointer',
+          }}
+        ></div>
       </div>
-      </div>
+      {toastMessage && (
+        <div className="toast-container">
+          <div className="toast">{toastMessage}</div>
+        </div>
+      )}
     </div>
   );
 };
