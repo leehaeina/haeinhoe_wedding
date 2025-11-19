@@ -4,11 +4,11 @@ import './styles.css';
 const App: React.FC = () => {
   const mainImage = `${process.env.PUBLIC_URL}/wedding-card-.png`;
   const overlayPhotos = [
-    `${process.env.PUBLIC_URL}/ 001.jpeg`,
-    `${process.env.PUBLIC_URL}/ 002.jpeg`,
-    `${process.env.PUBLIC_URL}/ 003.jpeg`,
-    `${process.env.PUBLIC_URL}/ 004.jpeg`,
-    `${process.env.PUBLIC_URL}/ 005.jpeg`,
+    `${process.env.PUBLIC_URL}/001.jpeg`,
+    `${process.env.PUBLIC_URL}/002.jpeg`,
+    `${process.env.PUBLIC_URL}/003.jpeg`,
+    `${process.env.PUBLIC_URL}/004.jpeg`,
+    `${process.env.PUBLIC_URL}/005.jpeg`,
   
   ];
 
@@ -67,10 +67,10 @@ const App: React.FC = () => {
         <div
           style={{
             position: 'absolute',
-            top: 3250,
+            top: '81.85299839%',
             left: '50%',
             transform: 'translateX(-50%)',
-            width: 260,
+            width: '75%',
             borderRadius: 20,
             boxShadow: '0 18px 40px rgba(0,0,0,0.2)',
             border: '5px solid #fff',
@@ -171,12 +171,13 @@ const App: React.FC = () => {
         <div
         style={{
           position: 'absolute',
-          top: 1995,
-          left: 60,
+          top: '50.5%',
+          left: '50%',
           background: '#486CB5',
           color: '#fff',
           padding: '4px 8px',
-          borderRadius: 6
+          borderRadius: 6,
+          transform: 'translateX(-50%)',
         }}
       >
         <div
@@ -336,11 +337,12 @@ const App: React.FC = () => {
           }}
           style={{
             position: 'absolute',
-            top: 2880,
-            left: 230,
-            width: 15,
-            height: 15,
+            top: '72.8%',
+            left: '66.42%',
+            width: '5%',
+            height: '0.5%',
             cursor: 'pointer',
+            border:'1px solid red'
           }}
         ></div>
 
@@ -357,12 +359,12 @@ const App: React.FC = () => {
           }}
           style={{
             position: 'absolute',
-            top: 2930,
-            left: 230,
-            width: 15,
-            height: 15,
-  
+            top: '74.05%',
+            left: '66.2%',
+            width: '5%',
+            height: '0.5%',
             cursor: 'pointer',
+            border:'1px solid red'
           }}
         ></div>
       
