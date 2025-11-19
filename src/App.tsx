@@ -342,7 +342,7 @@ const App: React.FC = () => {
             width: '5%',
             height: '0.5%',
             cursor: 'pointer',
-            border:'1px solid red'
+      
           }}
         ></div>
 
@@ -364,7 +364,7 @@ const App: React.FC = () => {
             width: '5%',
             height: '0.5%',
             cursor: 'pointer',
-            border:'1px solid red'
+          
           }}
         ></div>
       
