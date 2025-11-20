@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './styles.css';
 
 const App: React.FC = () => {
-  const mainImage = `${process.env.PUBLIC_URL}/wedding-card-.png`;
+  const mainImage = `${process.env.PUBLIC_URL}/wedding-card.png`;
   const overlayPhotos = [
     `${process.env.PUBLIC_URL}/001.jpeg`,
     `${process.env.PUBLIC_URL}/002.jpeg`,
@@ -67,7 +67,7 @@ const App: React.FC = () => {
         <div
           style={{
             position: 'absolute',
-            top: '81.85299839%',
+            top: '88%',
             left: '50%',
             transform: 'translateX(-50%)',
             width: '75%',
@@ -171,7 +171,7 @@ const App: React.FC = () => {
         <div
         style={{
           position: 'absolute',
-          top: '50.5%',
+          top: '53.5%',
           left: '50%',
           background: '#486CB5',
           color: '#fff',
@@ -337,12 +337,12 @@ const App: React.FC = () => {
           }}
           style={{
             position: 'absolute',
-            top: '72.8%',
+            top: '77.15%',
             left: '66.42%',
             width: '5%',
             height: '0.5%',
             cursor: 'pointer',
-      
+      // border:'1px solid blue'
           }}
         ></div>
 
@@ -359,12 +359,12 @@ const App: React.FC = () => {
           }}
           style={{
             position: 'absolute',
-            top: '74.05%',
+            top: '78.51%',
             left: '66.2%',
             width: '5%',
             height: '0.5%',
             cursor: 'pointer',
-          
+          // border:'1px solid red'
           }}
         ></div>
       
