@@ -34,6 +34,13 @@ const App: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    overlayPhotos.forEach(src => {
+      const img = new Image()
+      img.src = src
+    })
+  }, [overlayPhotos])
+
   const copyBankAccount = async (bankAccount: string) => {
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -67,7 +74,7 @@ const App: React.FC = () => {
         <div
           style={{
             position: 'absolute',
-            top: '88%',
+            top: '87%',
             left: '50%',
             transform: 'translateX(-50%)',
             width: '75%',
